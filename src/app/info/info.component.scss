@@ -1,0 +1,19 @@
+.field-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.field-group label {
+    color : gray;
+}
+
+.field-group input {
+    width: 350px;
+}

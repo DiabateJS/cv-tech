@@ -1,0 +1,35 @@
+<div class="box">
+    <div class="box-title-group">
+        <span><i style="color: orange;" class="fa fa-info-circle" aria-hidden="true"></i></span>
+        <p class="titre">Informations générales</p>
+    </div>
+    <div class="field-row">
+        <div class="field-group">
+            <label>Titre du dossier de compétences</label>
+            <input type="text" value="{{ info.titre }}" />
+        </div>
+        <div class="field-group">
+            <label>Poste occupé</label>
+            <input type="text" value="{{ info.poste }}" />
+        </div>
+    </div>
+    <div class="field-row">
+        <div class="field-group">
+            <label>Nombre d'années d'expérience</label>
+            <input type="text" value="{{ info.annee }}" />
+        </div>
+        <div class="field-group">
+            <label>Disponibilité</label>
+            <input type="text" value="{{ info.dispo }}" />
+        </div>
+    </div>
+</div>
+<div class="box">
+    <div class="box-title-group">
+        <span><i style="color: blue;" class="fa fa-user-circle" aria-hidden="true"></i></span>
+        <p class="titre">Introduction</p>
+    </div>
+    <textarea>
+        {{ info.intro }}
+    </textarea>
+</div>

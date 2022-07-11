@@ -1,0 +1,28 @@
+<p class="titre-dossier">Dossier de compétences de {{ cv.name }}</p>
+<br>
+<br>
+<!--<div class="btn-container">
+    <button>SAUVEGARDER</button>
+    <button>TELECHARGER PDF</button>
+    <button>Visualiser le rendu</button>
+</div>-->
+<app-info [info]="cv"></app-info>
+<app-experiences [experiences]="experiences"></app-experiences>
+<app-competences-techniques [languages]="languages"
+                            [selectedLanguages]="selectedLanguages"
+                            [frameworks]="frameworks"
+                            [selectedFrameworks]="selectedFrameworks"
+                            [sgbd]="sgbd"
+                            [selectedSgbd]="selectedSgbd"
+                            [os]="os"
+                            [selectedOs]="selectedOs"
+                            [outils]="outils"
+                            [selectedOutils]="selectedOutils"
+                            [methodes]="methodes"
+                            [selectedMethodes]="selectedMethodes"
+                            [devops]="devops"
+                            [selectedDevops]="selectedDevops"></app-competences-techniques>
+<app-competences-fonctionnelles [fonctionnels]="fonctionnels"></app-competences-fonctionnelles>
+<app-experiences-pro [experiences]="experiences"></app-experiences-pro>
+<app-formations [formations]="formations"></app-formations>
+<app-langues [langues]="langues"></app-langues>

@@ -1,0 +1,154 @@
+<div class="box">
+    <div class="box-first-row">
+        <div class="box-title-group">
+            <span><i style="color: orange;" class="fa fa-wrench" aria-hidden="true"></i></span>
+            <p class="titre">Compétences techniques</p>
+        </div>
+    </div>
+    <div class="box-body" style="border: none;">
+        <div class="button-row">
+            <div class="competence-box" style="background-color: blueviolet;">
+                <div class="comptetence-count">{{ selectedLanguages.length }}</div>
+                <div class="comptetence-name" (click)="canShowLanguages()">Languages</div>
+            </div>
+            <div class="competence-box" style="background-color: blue;">
+                <div class="comptetence-count">{{ selectedFrameworks.length }}</div>
+                <div class="comptetence-name" (click)="canShowFrameworks()">Framework</div>
+            </div>
+            <div class="competence-box" style="background-color: green;">
+                <div class="comptetence-count">{{ selectedSgbd.length }}</div>
+                <div class="comptetence-name" (click)="canShowSgbd()" >SGBD</div>
+            </div>
+            <div class="competence-box" style="background-color: blue;">
+                <div class="comptetence-count">{{ selectedOs.length }}</div>
+                <div class="comptetence-name" (click)="canShowOs()">OS</div>
+            </div>
+            <div class="competence-box" style="background-color:blueviolet">
+                <div class="comptetence-count">{{ selectedOutils.length }}</div>
+                <div class="comptetence-name" (click)="canShowOutils()">Outils</div>
+            </div>
+            <div class="competence-box" style="background-color:green">
+                <div class="comptetence-count">{{ selectedMethodes.length }}</div>
+                <div class="comptetence-name" (click)="canShowMethodes()">Méthodes</div>
+            </div>
+            <div class="competence-box" style="background-color:blue">
+                <div class="comptetence-count">{{ selectedDevops.length }}</div>
+                <div class="comptetence-name" (click)="canShowDevops()">DevOps</div>
+            </div>
+        </div>
+        <div class="button-details-container" *ngIf="showLangages">
+            <div class="details-container-row">
+                <div class="details-container-title">AJOUT DES COMPETENCES TECHNIQUES</div>
+                <div class="details-container-btn" (click)="validerCompetences()">VALIDER</div>
+            </div>
+            <div class="details-container-specific-title">LANGAGES</div>
+            <div class="detail-checkbox-container">
+                <div class="checkbox-block" *ngFor="let language of languages">
+                    <input type="checkbox" (change)="updateCheckedLanguages(language, $event)" [checked]="selectedLanguages.includes(language)"/><p class="item-value">{{ language }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="button-details-container" *ngIf="showFrameworks">
+            <div class="details-container-row">
+                <div class="details-container-title">AJOUT DES COMPETENCES TECHNIQUES</div>
+                <div class="details-container-btn" (click)="validerCompetences()">VALIDER</div>
+            </div>
+            <div class="details-container-specific-title">FRAMEWORKS</div>
+            <div class="detail-checkbox-container">
+                <div class="checkbox-block" *ngFor="let framework of frameworks">
+                    <input type="checkbox" (change)="updateCheckedFrameworks(framework, $event)" [checked]="selectedFrameworks.includes(framework)" /><p class="item-value">{{ framework }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="button-details-container" *ngIf="showSgbd">
+            <div class="details-container-row">
+                <div class="details-container-title">AJOUT DES COMPETENCES TECHNIQUES</div>
+                <div class="details-container-btn" (click)="validerCompetences()">VALIDER</div>
+            </div>
+            <div class="details-container-specific-title">SGBD</div>
+            <div class="detail-checkbox-container">
+                <div class="checkbox-block" *ngFor="let sg of sgbd">
+                    <input type="checkbox" (change)="updateCheckedSgbd(sg, $event)" [checked]="selectedSgbd.includes(sg)" /><p class="item-value">{{ sg }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="button-details-container" *ngIf="showOs">
+            <div class="details-container-row">
+                <div class="details-container-title">AJOUT DES COMPETENCES TECHNIQUES</div>
+                <div class="details-container-btn" (click)="validerCompetences()">VALIDER</div>
+            </div>
+            <div class="details-container-specific-title">Systèmes d'Exploitation</div>
+            <div class="detail-checkbox-container">
+                <div class="checkbox-block" *ngFor="let o of os">
+                    <input type="checkbox" (change)="updateCheckedOs(o, $event)" [checked]="selectedOs.includes(o)" /><p class="item-value">{{ o }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="button-details-container" *ngIf="showOutils">
+            <div class="details-container-row">
+                <div class="details-container-title">AJOUT DES COMPETENCES TECHNIQUES</div>
+                <div class="details-container-btn" (click)="validerCompetences()">VALIDER</div>
+            </div>
+            <div class="details-container-specific-title">Outils</div>
+            <div class="detail-checkbox-container">
+                <div class="checkbox-block" *ngFor="let outil of outils">
+                    <input type="checkbox" (change)="updateCheckedOutils(outil, $event)" [checked]="selectedOutils.includes(outil)" /><p class="item-value">{{ outil }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="button-details-container" *ngIf="showMethodes">
+            <div class="details-container-row">
+                <div class="details-container-title">AJOUT DES COMPETENCES TECHNIQUES</div>
+                <div class="details-container-btn" (click)="validerCompetences()">VALIDER</div>
+            </div>
+            <div class="details-container-specific-title">Methodes</div>
+            <div class="detail-checkbox-container">
+                <div class="checkbox-block" *ngFor="let methode of methodes">
+                    <input type="checkbox" (change)="updateCheckedMethodes(methode, $event)" [checked]="selectedMethodes.includes(methode)" /><p class="item-value">{{ methode }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="button-details-container" *ngIf="showDevops">
+            <div class="details-container-row">
+                <div class="details-container-title">AJOUT DES COMPETENCES TECHNIQUES</div>
+                <div class="details-container-btn" (click)="validerCompetences()">VALIDER</div>
+            </div>
+            <div class="details-container-specific-title">DevOps</div>
+            <div class="detail-checkbox-container">
+                <div class="checkbox-block" *ngFor="let dev of devops">
+                    <input type="checkbox" (change)="updateCheckedDevops(dev, $event)" [checked]="selectedDevops.includes(dev)" /><p class="item-value">{{ dev }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-body">
+        <div class="competence-row">
+            <span class="competence-title">Langages</span>
+            <span class="competences-list">{{ selectedLanguages.join(", ") }}</span>
+        </div>
+        <div class="competence-row">
+            <span class="competence-title">Framework</span>
+            <span class="competences-list">{{ selectedFrameworks.join(", ") }}</span>
+        </div>
+        <div class="competence-row">
+            <span class="competence-title">SGBD</span>
+            <span class="competences-list">{{ selectedSgbd.join(", ") }}</span>
+        </div>
+        <div class="competence-row">
+            <span class="competence-title">Systèmes d'exploitation</span>
+            <span class="competences-list">{{ selectedOs.join(", ") }}</span>
+        </div>
+        <div class="competence-row">
+            <span class="competence-title">Outils</span>
+            <span class="competences-list">{{ selectedOutils.join(", ") }}</span>
+        </div>
+        <div class="competence-row">
+            <span class="competence-title">Méthodes</span>
+            <span class="competences-list">{{ selectedMethodes.join(", ") }}</span>
+        </div>
+        <div class="competence-row">
+            <span class="competence-title">DevOps</span>
+            <span class="competences-list">{{ selectedDevops.join(", ") }}</span>
+        </div>
+    </div>
+</div>

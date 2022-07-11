@@ -1,0 +1,32 @@
+<div class="box">
+    <div class="box-first-row">
+        <div class="box-title-group">
+            <span><i style="color: blue;" class="fa fa-globe" aria-hidden="true"></i></span>
+            <p class="titre">Langues</p>
+        </div>
+        <span>AJOUTER UNE LANGUE</span>
+    </div>
+    <div class="langues-container">
+        <div class="langue-row" *ngFor="let langue of langues">
+            <div class="langue-field-group">
+                <label>Langue</label>
+                <input type="text" value="{{ langue.libelle }}" />
+            </div>
+            <div class="langue-niveau-field-group">
+                <div class="option-group">
+                    <input type="radio" value="Debutant" name="debutant" [checked]="langue.niveau == 'debutant'" />
+                    <label form="debutant">Débutant</label>
+                </div>
+                <div class="option-group">
+                    <input type="radio" value="Professionnel" name="professionnel" [checked]="langue.niveau == 'professionnel'"/>
+                    <label form="professionnel">Professionnel</label>
+                </div>
+                <div class="option-group">
+                    <input type="radio" value="Courant" name="courant" [checked]="langue.niveau == 'courant'"/>
+                    <label form="courant">Courant</label>
+                </div>
+            </div>
+            <span>SUPPRIMER</span>
+        </div>
+    </div>
+</div>

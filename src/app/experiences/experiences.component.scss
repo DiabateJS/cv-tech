@@ -1,0 +1,42 @@
+.exp-details-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.exp-detail-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.client-field-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.client-field-group label{
+    color: gray;
+}
+
+.description-field-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.description-field-group label {
+    color: gray;
+}
+
+.description-field-group label {
+    width: 420px;
+    margin-bottom: 1px solid black;
+}
+
+.exp-detail-row span {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 30px;
+}

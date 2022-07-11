@@ -1,0 +1,111 @@
+.box-body {
+    border: 1px solid black;
+    padding: 15px;
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.competence-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.competence-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 50px;
+    width: 220px;
+}
+
+.competences-list {
+    color: gray;
+    font-weight: bold;
+}
+
+.button-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.competence-box {
+    width: 150px;
+    height: 80px;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+}
+
+.comptetence-count {
+    text-align: right;
+    font-size: 14px;
+}
+
+.comptetence-name {
+    text-align: center;
+    font-size: 18px;
+}
+
+.button-details-container {
+    margin: 5px;
+    padding: 10px;
+}
+
+.details-container-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.details-container-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.details-container-btn {
+    background-color: cadetblue;
+    color: white;
+    border-radius: 10px;
+    width: 90px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 180px;
+    margin-bottom: 20px;
+}
+
+.details-container-specific-title {
+    font-weight: bold;
+    color:blueviolet;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.detail-checkbox-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.checkbox-block {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.checkbox-block input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+
+.item-value {
+    font-size: 14px;
+    font-weight: bold;
+}

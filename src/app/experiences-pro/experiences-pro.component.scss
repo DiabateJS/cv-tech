@@ -1,0 +1,168 @@
+.pro-details-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.pro-detail-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+}
+
+.pro-client-field-group {
+    margin-right: 5px;
+}
+
+.pro-client-field-group label {
+    color: gray;
+}
+
+.pro-client-field-group input {
+    width: 150px;
+}
+
+.pro-description-field-group {
+    margin-right: 10px;
+}
+
+.pro-description-field-group label {
+    color: gray;
+}
+
+.pro-description-field-group input {
+    width: 300px;
+}
+
+.pro-vile-field-group input {
+    width: 100px;
+}
+
+.pro-vile-field-group label {
+    color: gray;
+}
+
+.pro-detail-row button {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    width: 130px;
+    padding-left: 5px;
+    padding-top: 2px;
+    border: none;
+    color: blue;
+    font-weight: bold;
+}
+
+.pro-detail-row button i {
+    color: orange; 
+    font-size: 20px;
+}
+
+.pro-detail-row span {
+    font-weight: bold;
+    color: red;
+    padding-left: 5px;
+    padding-top: 2px;
+    margin-top: 30px;
+}
+
+.pro-detail-edit {
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-btn-container button {
+    margin-left: 650px;
+    background-color: cadetblue;
+    color: white;
+    border-radius: 5px;
+    width: 90px;
+}
+
+.edit-title-row {
+    margin-bottom: 15px;
+}
+
+.pro-detail-edit-title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.edit-info-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-info-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.edit-info-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.titre-projet-block, .poste-block,
+.debut-block, .fin-block  {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.titre-projet-block label, .poste-block label,
+.debut-block label, .fin-block label {
+    color: gray;
+}
+
+.titre-projet-block input {
+    width: 300px;
+}
+
+.poste-block input {
+    width: 200px;
+}
+
+.debut-block input , .fin-block input {
+    width: 100px;
+}
+
+.edit-description-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.edit-description-row label {
+    color: gray;
+}
+
+.edit-taches-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.taches-block-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.text-edit-container textarea {
+    height: 150px;
+    margin-top: 15px;
+}
+
+.edit-env-tech-row {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-env-tech-row label {
+    color: gray;
+}

@@ -1,0 +1,42 @@
+<div class="search-container">
+	<div class="search-title-row">
+		Recherche de cv
+	</div>
+	<div class="search-field-row">
+		<input type="text" />
+		<button class="btn btn-primary">Rechercher</button>
+	</div>
+	<div class="search-filtre-title-row">
+		Filtres de recherche
+	</div>
+	<div class="search-filtre-chechbox-row">
+		<div class="search-filtre-checkbox">
+			<input type="checkbox" /> <label>Nom</label>
+		</div>
+		<div class="search-filtre-checkbox">
+			<input type="checkbox" /> <label>Titre</label>
+		</div>
+		<div class="search-filtre-checkbox">
+			<input type="checkbox" /> <label>Année experiences</label>
+		</div>
+	</div>
+</div>
+<div class="carte-cv-container">
+	<div class="card-container" *ngFor="let cv of data">
+		<img class="round" [src]="cv.imgSrc" alt="user" />
+		<h3>{{ cv.name }}</h3>
+		<h6>{{ cv.poste }}</h6>
+		<p>{{ cv.annee }} ans d'expériences</p>
+		<div class="buttons">
+			<button class="primary" (click)="showCv(cv.id)">
+				Afficher
+			</button>
+		</div>
+		<div class="skills">
+			<h6>Langages</h6>
+			<ul>
+				<li *ngFor="let language of languages">{{ language }}</li>
+			</ul>
+		</div>
+	</div>
+</div>
