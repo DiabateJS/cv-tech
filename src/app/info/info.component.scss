@@ -1,19 +1,76 @@
-.field-row {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 25px;
-}
-
-.field-group {
-    display: flex;
-    flex-direction: column;
-    margin-right: 50px;
-}
-
-.field-group label {
-    color : gray;
-}
-
-.field-group input {
-    width: 350px;
+.info-container {
+    .box {
+        .box-title-group {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .box-first-row {
+            display: flex;
+            flex-direction: row;
+        
+            span {
+                font-weight: bold;
+                margin-top: 5px;
+                margin-left: 25px;
+                color: blue;
+            }
+        
+            button {
+                font-size: 10px;
+                font-weight: bold;
+                margin-top: 5px;
+                margin-left: 25px;
+                border: 1px solid black;
+                width: 420px;
+                height: 30px;
+            }
+        
+        }
+        
+        .box-second-row {
+            display: flex;
+            flex-direction: row;
+        
+            span {
+                font-size: 18px;
+                font-weight: bold;
+                width: 300px;
+            }
+        
+            button {
+                border: none;
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: 50px;
+                color: blue;
+            }
+        
+        }
+        
+        .field-row {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 25px;
+    
+            .field-group {
+                display: flex;
+                flex-direction: column;
+                margin-right: 50px;
+        
+                label {
+                    color : gray;
+                }
+                
+                input {
+                    width: 350px;
+                    border: none;
+                    border-bottom: 1px solid black;
+                    background-color: transparent;
+                    outline: none;
+                }
+            }
+        }
+    }
+    
 }

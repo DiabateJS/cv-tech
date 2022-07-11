@@ -1,22 +1,24 @@
-<div class="box">
-    <div class="box-first-row">
-        <div class="box-title-group">
-            <span><i style="color: orange;" class="fa fa-tasks" aria-hidden="true"></i></span>
-            <p class="titre">Compétences fonctionnelles</p>
+<div class="fonct-container">
+    <div class="box">
+        <div class="box-first-row">
+            <div class="box-title-group">
+                <span><i style="color: orange;" class="fa fa-tasks" aria-hidden="true"></i></span>
+                <p class="titre">Compétences fonctionnelles</p>
+            </div>
+            <span>AJOUTER UNE COMPETENCE FONCTIONNELLE</span>
         </div>
-        <span>AJOUTER UNE COMPETENCE FONCTIONNELLE</span>
-    </div>
-    <div class="fonctionnel-details-container">
-        <div class="fonctionnel-detail-row" *ngFor="let fonctionnel of fonctionnels">
-            <div class="titre-field-group">
-                <label>Titre</label>
-                <input type="text" value="{{ fonctionnel.titre }}" />
+        <div class="fonctionnel-details-container">
+            <div class="fonctionnel-detail-row" *ngFor="let fonctionnel of fonctionnels">
+                <div class="titre-field-group">
+                    <label>Titre</label>
+                    <input type="text" value="{{ fonctionnel.titre }}" />
+                </div>
+                <div class="description-field-group">
+                    <label>Description</label>
+                    <input type="text" value="{{ fonctionnel.description }}" />
+                </div>
+                <span>SUPPRIMER</span>
             </div>
-            <div class="description-field-group">
-                <label>Description</label>
-                <input type="text" value="{{ fonctionnel.description }}" />
-            </div>
-            <span>SUPPRIMER</span>
         </div>
     </div>
 </div>
