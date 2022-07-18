@@ -41,6 +41,7 @@ export class CvTechComponent implements OnInit {
   constructor(private cvService: CvService, private utilService: UtilService,
               private route: ActivatedRoute) {
                 this.route.params.subscribe(params => {
+                  console.log(params);
                   this.idCv = params["id"];
                 }); 
 
