@@ -1,0 +1,17 @@
+<div class="auth-container">
+    <div class="login-container">
+        <div class="img-zone">
+            <img src="./assets/authent.png">
+        </div>
+        <div class="error-zone">
+            {{msgError}}
+        </div>
+        <div class="fields">
+            <input type="text" placeholder="Login" [(ngModel)]="login">
+            <input type="password" placeholder="password" [(ngModel)]="password">
+        </div>
+        <div class="btn-zone">
+            <button (click)="auth()">S'authentifier</button>
+        </div>
+    </div>
+</div>

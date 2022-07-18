@@ -16,6 +16,8 @@ import { LanguesComponent } from './langues/langues.component';
 import { CartesCvComponent } from './cartes-cv/cartes-cv.component';
 import { CompetencesTechniquesComponent } from './competences-techniques/competences-techniques.component';
 import { CompetencesFonctionnellesComponent } from './competences-fonctionnelles/competences-fonctionnelles.component';
+import { AuthComponent } from './auth/auth.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CompetencesFonctionnellesComponent } from './competences-fonctionnelles
     LanguesComponent,
     CartesCvComponent,
     CompetencesTechniquesComponent,
-    CompetencesFonctionnellesComponent
+    CompetencesFonctionnellesComponent,
+    AuthComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
