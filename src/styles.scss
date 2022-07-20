@@ -1,5 +1,9 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .box {
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -34,18 +38,18 @@
     }
 }
 
-.box-title-group {
-    display: flex;
-    flex-direction: row;
-}
-
 .box-first-row {
     display: flex;
     flex-direction: row;
 
+    .box-title-group {
+        display: flex;
+        flex-direction: row;
+    }
+
     span {
         font-weight: bold;
-        margin-top: 5px;
+        margin-top: 16px;
         margin-left: 25px;
         color: blue;
     }

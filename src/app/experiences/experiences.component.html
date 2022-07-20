@@ -1,10 +1,15 @@
-<div class="box">
+<div class="exp-container box">
     <div class="box-first-row">
         <div class="box-title-group">
             <span><i style="color: blueviolet;" class="fa fa-cogs" aria-hidden="true"></i></span>
             <p class="titre">Expériences significatives</p>
         </div>
-        <span>AJOUTER UNE EXPERIENCE SIGNIFICATIVE</span>
+        <span (click)="newExperience()">AJOUTER</span>
+    </div>
+    <div class="form-new-experience" *ngIf="showNewExperienceForm">
+        <input type="text" placeholder="Client / Entreprise" [(ngModel)]="client">
+        <input type="text" class="description" placeholder="Description" [(ngModel)]="description">
+        <span (click)="saveExperience()">ENREGISTRER</span>
     </div>
     <div class="exp-details-container">
         <div class="exp-detail-row" *ngFor="let experience of experiences">

@@ -41,7 +41,6 @@ export class CvTechComponent implements OnInit {
   constructor(private cvService: CvService, private utilService: UtilService,
               private route: ActivatedRoute) {
                 this.route.params.subscribe(params => {
-                  console.log(params);
                   this.idCv = params["id"];
                 }); 
 
@@ -103,6 +102,10 @@ export class CvTechComponent implements OnInit {
     this.selectedMethodes = ["SCRUM", "AGILE", "UML"];
 
     this.selectedDevops = ["Kubernetes", "Docker"];
+  }
+
+  onChange($event: Experience): void {
+    this.experiences.push($event);
   }
     
 }

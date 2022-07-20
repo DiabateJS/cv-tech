@@ -8,7 +8,7 @@
         <button>Visualiser le rendu</button>
     </div>
     <app-info [info]="cv"></app-info>
-    <app-experiences [experiences]="experiences"></app-experiences>
+    <app-experiences [experiences]="experiences" (emitter)="onChange($event)"></app-experiences>
     <app-competences-techniques [languages]="languages"
                                 [selectedLanguages]="selectedLanguages"
                                 [frameworks]="frameworks"

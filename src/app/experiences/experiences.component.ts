@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Experience } from '../models/experience';
 
 @Component({
@@ -8,9 +8,26 @@ import { Experience } from '../models/experience';
 })
 export class ExperiencesComponent implements OnInit {
   @Input() experiences: Array<Experience> = [];
+  @Output() emitter: EventEmitter<Experience> = new EventEmitter<Experience>();
+  client: string = "";
+  description: string = "";
+  showNewExperienceForm: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  newExperience(): void {
+    this.showNewExperienceForm = true;
+  }
+
+  saveExperience(): void {
+    const experience = {id:"", client: this.client, description: this.description} as Experience;
+    this.emitter.emit(experience);
+    this.client = "";
+    this.description = "";
+    this.showNewExperienceForm = false;
   }
 
 }

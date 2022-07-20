@@ -1,45 +1,85 @@
 .exp-container {
+    .form-new-experience {
+        input {
+            margin-right: 10px;
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+            background-color: transparent;
+            height: 30px;
+            padding: 5px;
+        }
+
+        .description {
+            width: 420px;
+            margin-left: 30px;
+        }
+
+        span {
+            color: green;
+            font-weight: bold;
+            font-size: 12px;
+        }
+    }
+
     .exp-details-container {
         display: flex;
         flex-direction: column;
-    }
-    
-    .exp-detail-row {
-        display: flex;
-        flex-direction: row;
-        margin-top: 20px;
-    }
-    
-    .client-field-group {
-        display: flex;
-        flex-direction: column;
-        margin-right: 50px;
-    }
-    
-    .client-field-group label{
-        color: gray;
-    }
-    
-    .description-field-group {
-        display: flex;
-        flex-direction: column;
-        margin-right: 30px;
-    }
-    
-    .description-field-group  {
-        label{
-            color: gray;
-            width: 420px;
-            margin-bottom: 1px solid black;
+
+        .exp-detail-row {
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+
+            .client-field-group {
+                display: flex;
+                flex-direction: column;
+                margin-right: 50px;
+
+                label{
+                    color: gray;
+                }
+
+                input {
+                    border: none;
+                    border-bottom: 1px solid black;
+                    margin-top: 5px;
+                    background-color: transparent;
+                    height: 20px;
+                    padding: 5px;
+                    outline: none;
+                }
+            }
+
+            .description-field-group  {
+                display: flex;
+                flex-direction: column;
+                margin-right: 30px;
+        
+                label{
+                    color: gray;
+                    width: 420px;
+                    margin-bottom: 1px solid black;
+                }
+
+                input {
+                    margin-top: 5px;
+                    border: none;
+                    border-bottom: 1px solid black;
+                    background-color: transparent;
+                    height: 20px;
+                    padding: 5px;
+                    outline: none;
+                }
+            }
+
+            span {
+                color: red;
+                font-size: 14px;
+                font-weight: bold;
+                padding-top: 40px;
+            }
         }
     }
     
-    .exp-detail-row  {
-        span {
-            color: red;
-            font-size: 14px;
-            font-weight: bold;
-            padding-top: 30px;
-        }
-    }
 }
