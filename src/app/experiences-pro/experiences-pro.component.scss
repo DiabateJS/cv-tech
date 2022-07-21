@@ -1,177 +1,234 @@
 .pro-details-container {
     display: flex;
     flex-direction: column;
-}
 
-.pro-detail-row {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 25px;
-
-    button {
-        display: flex;
-        flex-direction: row;
-        margin-top: 10px;
-        width: 130px;
-        padding-left: 5px;
-        padding-top: 2px;
-        border: none;
-        color: blue;
-        font-weight: bold;
-        background-color: transparent;
-
-        i {
-            color: orange; 
-            font-size: 20px;
-        }
-    }
-
-    span {
-        font-weight: bold;
-        color: red;
-        padding-left: 5px;
-        padding-top: 2px;
-        margin-top: 10px;
-    }
-
-    .pro-client-field-group {
-        margin-right: 5px;
-    
-        label{
-            color: gray;
-        }
-        input {
-            background-color: transparent;
-            border: none;
-            border-bottom: 1px solid black;
-            outline: none;
-            width: 150px;
-        }
-    }
-
-    .pro-description-field-group {
-        margin-right: 10px;
-    
-        label {
-            color: gray;
-        }
-    
-        input {
-            background-color: transparent;
-            border: none;
-            border-bottom: 1px solid black;
-            outline: none;
-            width: 300px;
-        }
-    }
-
-    .pro-vile-field-group {
-        input{
-            background-color: transparent;
-            border: none;
-            border-bottom: 1px solid black;
-            outline: none;
-            width: 100px;
-        }
-    
-        label {
-            color: gray;
-        }
-    }
-}
-
-.pro-detail-edit {
-    border: 1px solid black;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-
-    .edit-btn-container  {
-        button {
-            margin-left: 650px;
-            background-color: cadetblue;
-            color: white;
-            border-radius: 5px;
-            width: 90px;
-        }
-    }
-
-    .edit-title-row {
+    .form-new-exp-pro {
         margin-bottom: 15px;
 
-        .pro-detail-edit-title {
-            text-align: center;
-            font-size: 25px;
-            font-weight: bold;
+        input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+            margin-right: 30px;
+        }
+
+        .description {
+            width: 300px;
+        }
+
+        button {
+            background-color: #8e3589;
+            color: white;
+            border-radius: 10px;
         }
     }
 
-    .edit-info-block {
+    .pro-detail-row {
         display: flex;
-        flex-direction: column;
-
-        .edit-info-title {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .edit-info-row {
+        flex-direction: row;
+        margin-bottom: 25px;
+    
+        button {
             display: flex;
             flex-direction: row;
-            margin-top: 15px;
-            margin-bottom: 15px;
-
-            .titre-projet-block, .poste-block,
-            .debut-block, .fin-block  {
-                display: flex;
-                flex-direction: column;
-                margin-right: 15px;
-
-                label {
-                    color: gray;
-                }
-            }
-
-            .titre-projet-block  {
-                input {
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 1px solid black;
-                    outline: none;
-                    width: 300px;
-                }
-            }
-
-            .poste-block  {
-                input {
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 1px solid black;
-                    outline: none;
-                    width: 200px;
-                }
-            }
-
-            .debut-block, .fin-block {
-                input {
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 1px solid black;
-                    outline: none;
-                    width: 100px;
-                }
+            margin-top: 10px;
+            width: 130px;
+            padding-left: 5px;
+            padding-top: 2px;
+            border: none;
+            color: blue;
+            font-weight: bold;
+            background-color: transparent;
+    
+            i {
+                color: orange; 
+                font-size: 20px;
             }
         }
-
-        .edit-description-row {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 15px;
+    
+        span {
+            font-weight: bold;
+            color: red;
+            padding-left: 5px;
+            padding-top: 2px;
+            margin-top: 10px;
+        }
+    
+        .pro-client-field-group {
+            margin-right: 5px;
+        
+            label{
+                color: gray;
+            }
+            input {
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;
+                outline: none;
+                width: 150px;
+            }
+        }
+    
+        .pro-description-field-group {
+            margin-right: 10px;
         
             label {
                 color: gray;
             }
+        
+            input {
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;
+                outline: none;
+                width: 300px;
+            }
+        }
+    
+        .pro-vile-field-group {
+            input{
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;
+                outline: none;
+                width: 100px;
+            }
+        
+            label {
+                color: gray;
+            }
+        }
+    }
 
+    .pro-detail-edit {
+        border: 1px dashed black;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    
+        .edit-btn-container  {
+            button {
+                margin-left: 650px;
+                background-color: cadetblue;
+                color: white;
+                border-radius: 5px;
+                width: 90px;
+            }
+        }
+    
+        .edit-title-row {
+            margin-bottom: 15px;
+    
+            .pro-detail-edit-title {
+                text-align: center;
+                font-size: 25px;
+                font-weight: bold;
+            }
+        }
+    
+        .edit-info-block {
+            display: flex;
+            flex-direction: column;
+    
+            .edit-info-title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+    
+            .edit-info-row {
+                display: flex;
+                flex-direction: row;
+                margin-top: 15px;
+                margin-bottom: 15px;
+    
+                .titre-projet-block, .poste-block,
+                .debut-block, .fin-block  {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 15px;
+    
+                    label {
+                        color: gray;
+                    }
+                }
+    
+                .titre-projet-block  {
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;
+                        outline: none;
+                        width: 300px;
+                    }
+                }
+    
+                .poste-block  {
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;
+                        outline: none;
+                        width: 200px;
+                    }
+                }
+    
+                .debut-block, .fin-block {
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;
+                        outline: none;
+                        width: 100px;
+                    }
+                }
+            }
+    
+            .edit-description-row {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 15px;
+            
+                label {
+                    color: gray;
+                }
+    
+                input {
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid black;
+                    outline: none;
+                    margin-top: 10px;
+                }
+            }
+        }
+    
+        .edit-taches-block {
+            display: flex;
+            flex-direction: column;
+        
+            .taches-block-title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        
+            .text-edit-container  {
+                textarea {
+                    height: 150px;
+                    margin-top: 15px;
+                }
+            }
+        }
+        
+        .edit-env-tech-row {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+        
+            label {
+                color: gray;
+            }
+    
             input {
                 background-color: transparent;
                 border: none;
@@ -179,41 +236,6 @@
                 outline: none;
                 margin-top: 10px;
             }
-        }
-    }
-
-    .edit-taches-block {
-        display: flex;
-        flex-direction: column;
-    
-        .taches-block-title {
-            font-size: 18px;
-            font-weight: bold;
-        }
-    
-        .text-edit-container  {
-            textarea {
-                height: 150px;
-                margin-top: 15px;
-            }
-        }
-    }
-    
-    .edit-env-tech-row {
-        margin-top: 15px;
-        display: flex;
-        flex-direction: column;
-    
-        label {
-            color: gray;
-        }
-
-        input {
-            background-color: transparent;
-            border: none;
-            border-bottom: 1px solid black;
-            outline: none;
-            margin-top: 10px;
         }
     }
 }

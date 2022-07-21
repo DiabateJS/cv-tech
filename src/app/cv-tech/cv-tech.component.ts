@@ -119,5 +119,9 @@ export class CvTechComponent implements OnInit {
   newLangue($event: Langue): void {
     this.langues.push($event);
   }
+
+  newExperiencePro($event: Experience): void {
+    this.experiences.push($event);
+  }
     
 }

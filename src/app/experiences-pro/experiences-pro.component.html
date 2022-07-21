@@ -4,10 +4,16 @@
             <span><i style="color: orange;" class="fa fa-wrench" aria-hidden="true"></i></span>
             <p class="titre">Expériences professionnelles</p>
         </div>
-        <span>AJOUTER UNE EXPERIENCE PROFESSIONNELLE</span>
+        <span (click)="addExpPro()">AJOUTER</span>
         <button>TRIER DE LA PLUS RECENTE A LA PLUS ANCIENNE</button>
     </div>
     <div class="pro-details-container">
+        <div class="form-new-exp-pro" *ngIf="showNewExpProForm">
+            <input type="text" placeholder="Client / Entreprise" [(ngModel)]="client">
+            <input type="text" class="description" placeholder="Description" [(ngModel)]="description">
+            <input type="text" placeholder="Ville (Pays)" [(ngModel)]="ville">
+            <button (click)="saveExpPro()">Enregistrer</button>
+        </div>
         <div class="pro-detail-row" *ngFor="let experience of experiences" >
             <div class="pro-client-field-group">
                 <label>Client / Entreprise</label>
@@ -19,7 +25,7 @@
             </div>
             <div class="pro-vile-field-group">
                 <label>Ville (Pays)</label>
-                <input type="text" value="" />
+                <input type="text" value="{{ experience.ville }}" />
             </div>
             <button (click)="edit(experience.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDITER</button>
             <span>SUPPRIMER</span>
@@ -36,19 +42,19 @@
                 <div class="edit-info-row">
                     <div class="titre-projet-block">
                         <label>Titre du projet</label>
-                        <input type="text"/>
+                        <input type="text" value="{{ selectedExperience.projet }}"/>
                     </div>
                     <div class="poste-block">
                         <label>Poste occupé</label>
-                        <input type="text" />
+                        <input type="text" value="{{ selectedExperience.poste }}"/>
                     </div>
                     <div class="debut-block">
                         <label>Début</label>
-                        <input type="text" />
+                        <input type="text" value="{{ selectedExperience.debut }}"/>
                     </div>
                     <div class="fin-block">
                         <label>Fin</label>
-                        <input type="text" />
+                        <input type="text" value="{{ selectedExperience.fin }}"/>
                     </div>
                 </div>
                 <div class="edit-description-row">
@@ -64,7 +70,7 @@
             </div>
             <div class="edit-env-tech-row">
                 <label>Environnement technique</label>
-                <input type="text" />
+                <input type="text" value="{{ selectedExperience.envtech }}"/>
             </div>
         </div>
     </div>

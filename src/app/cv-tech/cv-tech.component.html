@@ -24,7 +24,7 @@
                                 [devops]="devops"
                                 [selectedDevops]="selectedDevops"></app-competences-techniques>
     <app-competences-fonctionnelles [fonctionnels]="fonctionnels" (competence)="newCompetence($event)"></app-competences-fonctionnelles>
-    <app-experiences-pro [experiences]="experiences"></app-experiences-pro>
+    <app-experiences-pro [experiences]="experiences" (experiencePro)="newExperiencePro($event)"></app-experiences-pro>
     <app-formations [formations]="formations" (formation)="newFormation($event)"></app-formations>
     <app-langues [langues]="langues" (langue)="newLangue($event)"></app-langues>
 </div>
