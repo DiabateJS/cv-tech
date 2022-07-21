@@ -1,56 +1,101 @@
 .diplomes-container {
     display: flex;
     flex-direction: column;
-}
 
-.diplome-row {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 25px;
-}
+    .form-new-diplome {
+        display: flex;
+        flex-direction: row;
+        margin-top: 15px;
+        margin-bottom: 15px;
 
-.diplome-row span {
-    color: red;
-    font-size: 12px;
-    font-weight: bold;
-    padding-top: 35px;
+        input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+            margin-right: 15px;
+        }
 
-}
+        .description {
+            width: 300px;
+        }
 
-.diplome-organisme-field-group {
-    display: flex;
-    flex-direction: column;
-    margin-right: 15px;
-}
+        button {
+            background-color: #8e3589;
+            color: white;
+            width: 100px;
+            border-radius: 10px;
+        }
+    }
 
-.diplome-organisme-field-group label {
-    color: gray;
-}
+    .diplome-row {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        margin-bottom: 25px;
 
-.diplome-annee-field-group {
-    display: flex;
-    flex-direction: column;
-    margin-right: 15px;
-}
+        .diplome-organisme-field-group {
+            display: flex;
+            flex-direction: column;
+            margin-right: 15px;
+        
+            label {
+                color: gray;
+            }
 
-.diplome-annee-field-group label{
-    color: gray;
-}
-
-.diplome-annee-field-group input{
-    width: 150px;
-}
-
-.diplome-description-field-group {
-    display: flex;
-    flex-direction: column;
-    margin-right: 15px;
-}
-
-.diplome-description-field-group label {
-    color: gray;
-}
-
-.diplome-description-field-group input {
-    width: 300px;
+            input {
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;
+                margin-top: 5px;
+                outline: none;
+            }
+        }
+        
+        .diplome-annee-field-group {
+            display: flex;
+            flex-direction: column;
+            margin-right: 15px;
+        
+            input {
+                width: 150px;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;
+                margin-top: 5px;
+                outline: none;
+            }
+        
+            label {
+                color: gray;
+            }
+        }
+        
+        .diplome-description-field-group {
+            display: flex;
+            flex-direction: column;
+            margin-right: 15px;
+        
+            input {
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;
+                outline: none;
+                margin-top: 5px;
+                width: 300px;
+            }
+        
+            label {
+                color: gray;
+            }
+        }
+    
+        span {
+            color: red;
+            font-size: 12px;
+            font-weight: bold;
+            padding-top: 30px;
+            background-color: transparent;
+        }
+    }
 }

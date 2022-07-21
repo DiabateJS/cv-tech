@@ -111,5 +111,9 @@ export class CvTechComponent implements OnInit {
   newCompetence($event: CompetenceFonctionnel): void {
     this.fonctionnels.push($event);
   }
+
+  newFormation($event: Formation): void {
+    this.formations.push($event);
+  }
     
 }

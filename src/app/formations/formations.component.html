@@ -6,10 +6,16 @@
         </div>
     </div>
     <div class="box-second-row">
-        <span>Diplômes obtenus</span>
-        <button>AJOUTER UN DIPLOME</button>
+        <span>Diplômes obtenus & formations complémentaires</span>
+        <button (click)="newFormation()">AJOUTER</button>
     </div>
     <div class="diplomes-container">
+        <div class="form-new-diplome" *ngIf="canShowFormFormation">
+            <input type="text" class="organisme" placeholder="Organisme" [(ngModel)]="organisme">
+            <input type="text" class="annee" placeholder="Année" [(ngModel)]="annee">
+            <input type="text" class="description" placeholder="Description" [(ngModel)]="description">
+            <button (click)="saveDiplome()">Enregistrer</button>
+        </div>
         <div class="diplome-row" *ngFor="let formation of formations">
             <div class="diplome-organisme-field-group">
                 <label>Organisme</label>
@@ -25,9 +31,5 @@
             </div>
             <span>SUPPRIMER</span>
         </div>
-    </div>
-    <div class="box-second-row">
-        <span>Formation complémentaires / Certifications</span>
-        <button>AJOUTER UNE FORMATION</button>
     </div>
 </div>
