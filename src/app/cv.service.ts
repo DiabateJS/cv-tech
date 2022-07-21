@@ -30,6 +30,11 @@ export class CvService {
     return this.http.get<Response>(url);
   }
 
+  getCvExperiencesFonctionnelles(idCv: string): Observable<Response> {
+    const url = this.url_base + "url=cvs/"+idCv+"/competences_fonctionnelles/";
+    return this.http.get<Response>(url);
+  }
+
   getCvFormations(idCv: string): Observable<Response> {
     const url = this.url_base + "url=cvs/"+idCv+"/formations/";
     return this.http.get<Response>(url);

@@ -7,6 +7,30 @@
             }
         }
 
+        .form-new-competence-fonctionnel {
+            margin-bottom: 20px;
+            margin-top: 15px;
+            input { 
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;
+                outline: none;
+            }
+
+            .fonct-description {
+                margin-left: 25px;
+                width: 400px;
+            }
+
+            button {
+                margin-left: 15px;
+                width: 100px;
+                border-radius: 10px;
+                background-color:  #8e3589;
+                color: white;
+            }
+        }
+
         .fonctionnel-details-container {
             display: flex;
             flex-direction: column;

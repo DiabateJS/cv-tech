@@ -85,10 +85,10 @@ export class CvTechComponent implements OnInit {
       }
     });
 
-    this.fonctionnels = [
-      {id:"1",titre:"Titre 1",description:"Description 1"},
-      {id:"2", titre:"Titre 2",description:"Description 2"}
-    ];
+    this.cvService.getCvExperiencesFonctionnelles(this.idCv).subscribe(data => {
+      const res: any = data.resultat;
+      this.fonctionnels = res;
+    });
 
     this.selectedFrameworks = ["ANGULAR", "ANGULARJS", "JPA", "HIBERNATE", "J2EE", "NODE.JS",
                         "REACT.JS", "REST", "SPRING", "SPRING BOOT", "TWITTER BOOTSTRAP"];
@@ -104,8 +104,12 @@ export class CvTechComponent implements OnInit {
     this.selectedDevops = ["Kubernetes", "Docker"];
   }
 
-  onChange($event: Experience): void {
+  newExperience($event: Experience): void {
     this.experiences.push($event);
+  }
+
+  newCompetence($event: CompetenceFonctionnel): void {
+    this.fonctionnels.push($event);
   }
     
 }

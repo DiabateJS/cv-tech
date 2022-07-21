@@ -8,7 +8,7 @@
         <button>Visualiser le rendu</button>
     </div>
     <app-info [info]="cv"></app-info>
-    <app-experiences [experiences]="experiences" (emitter)="onChange($event)"></app-experiences>
+    <app-experiences [experiences]="experiences" (exps)="newExperience($event)"></app-experiences>
     <app-competences-techniques [languages]="languages"
                                 [selectedLanguages]="selectedLanguages"
                                 [frameworks]="frameworks"
@@ -23,7 +23,7 @@
                                 [selectedMethodes]="selectedMethodes"
                                 [devops]="devops"
                                 [selectedDevops]="selectedDevops"></app-competences-techniques>
-    <app-competences-fonctionnelles [fonctionnels]="fonctionnels"></app-competences-fonctionnelles>
+    <app-competences-fonctionnelles [fonctionnels]="fonctionnels" (competence)="newCompetence($event)"></app-competences-fonctionnelles>
     <app-experiences-pro [experiences]="experiences"></app-experiences-pro>
     <app-formations [formations]="formations"></app-formations>
     <app-langues [langues]="langues"></app-langues>

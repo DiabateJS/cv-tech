@@ -1,5 +1,5 @@
 export interface CompetenceFonctionnel {
     id: string;
-    titre: string;
+    libelle: string;
     description: string;
 }

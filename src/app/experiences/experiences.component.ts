@@ -8,7 +8,7 @@ import { Experience } from '../models/experience';
 })
 export class ExperiencesComponent implements OnInit {
   @Input() experiences: Array<Experience> = [];
-  @Output() emitter: EventEmitter<Experience> = new EventEmitter<Experience>();
+  @Output() exps: EventEmitter<Experience> = new EventEmitter<Experience>();
   client: string = "";
   description: string = "";
   showNewExperienceForm: boolean = false;
@@ -24,7 +24,7 @@ export class ExperiencesComponent implements OnInit {
 
   saveExperience(): void {
     const experience = {id:"", client: this.client, description: this.description} as Experience;
-    this.emitter.emit(experience);
+    this.exps.emit(experience);
     this.client = "";
     this.description = "";
     this.showNewExperienceForm = false;

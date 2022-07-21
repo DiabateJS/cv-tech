@@ -5,13 +5,18 @@
                 <span><i style="color: orange;" class="fa fa-tasks" aria-hidden="true"></i></span>
                 <p class="titre">Compétences fonctionnelles</p>
             </div>
-            <span>AJOUTER UNE COMPETENCE FONCTIONNELLE</span>
+            <span (click)="addCompetence()">AJOUTER</span>
+        </div>
+        <div class="form-new-competence-fonctionnel" *ngIf="canShowCompetenceFonctForm">
+            <input type="text" placeholder="Titre" [(ngModel)]="titre">
+            <input type="text" class="fonct-description" placeholder="Description" [(ngModel)]="description">
+            <button (click)="saveCompetence()">Enregistrer</button>
         </div>
         <div class="fonctionnel-details-container">
             <div class="fonctionnel-detail-row" *ngFor="let fonctionnel of fonctionnels">
                 <div class="titre-field-group">
                     <label>Titre</label>
-                    <input type="text" value="{{ fonctionnel.titre }}" />
+                    <input type="text" value="{{ fonctionnel.libelle }}" />
                 </div>
                 <div class="description-field-group">
                     <label>Description</label>
