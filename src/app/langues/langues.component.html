@@ -4,9 +4,18 @@
             <span><i style="color: blue;" class="fa fa-globe" aria-hidden="true"></i></span>
             <p class="titre">Langues</p>
         </div>
-        <span>AJOUTER UNE LANGUE</span>
+        <span (click)="addLangue()">AJOUTER</span>
     </div>
     <div class="langues-container">
+        <div class="form-new-langue" *ngIf="canShowFormLangue">
+            <input type="text" placeholder="Langue" [(ngModel)]="libelle">
+            <select [(ngModel)]="niveau">
+                <option value="debutant">Débutant</option>
+                <option value="professionnel">Professionnel</option>
+                <option value="courant">Courant</option>
+            </select>
+            <button (click)="saveLangue()">Enregistrer</button>
+        </div>
         <div class="langue-row" *ngFor="let langue of langues">
             <div class="langue-field-group">
                 <label>Langue</label>

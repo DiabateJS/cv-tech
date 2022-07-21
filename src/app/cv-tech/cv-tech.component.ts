@@ -115,5 +115,9 @@ export class CvTechComponent implements OnInit {
   newFormation($event: Formation): void {
     this.formations.push($event);
   }
+
+  newLangue($event: Langue): void {
+    this.langues.push($event);
+  }
     
 }
