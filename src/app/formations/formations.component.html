@@ -16,6 +16,12 @@
             <input type="text" class="description" placeholder="Description" [(ngModel)]="description">
             <button (click)="saveDiplome()">Enregistrer</button>
         </div>
+        <div class="form-new-diplome" *ngIf="canShowFormUpdateFormation">
+            <input type="text" class="organisme" placeholder="Organisme" [(ngModel)]="selectedFormation.organisme">
+            <input type="text" class="annee" placeholder="Année" [(ngModel)]="selectedFormation.annee">
+            <input type="text" class="description" placeholder="Description" [(ngModel)]="selectedFormation.description">
+            <button (click)="updateDiplome()">Enregistrer</button>
+        </div>
         <div class="diplome-row" *ngFor="let formation of formations">
             <div class="diplome-organisme-field-group">
                 <label>Organisme</label>
@@ -29,7 +35,8 @@
                 <label>Description</label>
                 <input type="text" value="{{ formation.description }}" />
             </div>
-            <span>SUPPRIMER</span>
+            <span class="span-edit" (click)="edit(formation.id)">EDITER</span>
+            <span (click)="delete(formation.id)">SUPPRIMER</span>
         </div>
     </div>
 </div>

@@ -57,11 +57,7 @@ export class CvTechComponent implements OnInit {
 
     this.loadExperiences();
 
-    this.cvService.getCvFormations(this.idCv).subscribe(data => {
-      if (data.code === SUCCES_CODE){
-        this.formations = <Array<Formation>>data.resultat;
-      }
-    });
+    this.loadFormations();
 
     this.cvService.getCvLangues(this.idCv).subscribe(data => {
       if (data.code === SUCCES_CODE){
@@ -113,6 +109,14 @@ export class CvTechComponent implements OnInit {
     });
   }
 
+  private loadFormations(): void {
+    this.cvService.getCvFormations(this.idCv).subscribe(data => {
+      if (data.code === SUCCES_CODE){
+        this.formations = <Array<Formation>>data.resultat;
+      }
+    });
+  }
+
   competenceFonctAction($event: ActionManager<CompetenceFonctionnel>): void {
     if ($event.action === CREATE_ACTION){
       this.cvService.createExperienceFonctionnelle(this.idCv, $event.element).subscribe(data => {
@@ -136,8 +140,28 @@ export class CvTechComponent implements OnInit {
     }
   }
 
-  newFormation($event: Formation): void {
-    this.formations.push($event);
+  formationAction($event: ActionManager<Formation>): void {
+    if ($event.action === CREATE_ACTION){
+      this.cvService.createFormation(this.idCv, $event.element).subscribe(data => {
+        if (data.code === SUCCES_CODE){
+          this.loadFormations();
+        }
+      });
+    }
+    if ($event.action === DELETE_ACTION){
+      this.cvService.deleteFormation(this.idCv, $event.element).subscribe(data => {
+        if (data.code === SUCCES_CODE){
+          this.loadFormations();
+        }
+      });
+    }
+    if ($event.action === UPDATE_ACTION){
+      this.cvService.updateFormation(this.idCv, $event.element).subscribe(data => {
+        if (data.code === SUCCES_CODE){
+          this.loadFormations();
+        }
+      });
+    }
   }
 
   newLangue($event: Langue): void {

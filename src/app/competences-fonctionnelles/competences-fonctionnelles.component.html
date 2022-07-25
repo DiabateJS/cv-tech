@@ -15,7 +15,7 @@
         <div class="form-new-competence-fonctionnel" *ngIf="canShowCompetenceFonctUpdateForm">
             <input type="text" placeholder="Titre" [(ngModel)]="selectedCompetenceFonctionnelle.libelle">
             <input type="text" class="fonct-description" placeholder="Description" [(ngModel)]="selectedCompetenceFonctionnelle.description">
-            <button (click)="updateCompetence()">Mis à Jour</button>
+            <button (click)="updateCompetence()">Enregistrer</button>
         </div>
         <div class="fonctionnel-details-container">
             <div class="fonctionnel-detail-row" *ngFor="let fonctionnel of fonctionnels">
