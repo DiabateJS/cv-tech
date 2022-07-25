@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CvService } from '../cv.service';
 import { CompetenceFonctionnel } from '../models/competence-fonctionnel';
-import { Constants } from '../models/constants';
+import { SUCCES_CODE, CREATE_ACTION, UPDATE_ACTION, DELETE_ACTION } from '../models/constants';
 import { Cv } from '../models/cv';
+import { ActionManager } from '../models/action-manager';
 import { Experience } from '../models/experience';
 import { Formation } from '../models/formation';
 import { Langue } from '../models/langue';
@@ -48,33 +49,29 @@ export class CvTechComponent implements OnInit {
 
   ngOnInit(): void {
     this.cvService.getCvById(this.idCv).subscribe(res => {
-      if (res.code === Constants.SUCCES_CODE){
+      if (res.code === SUCCES_CODE){
         this.cv = <Cv>res.resultat.data[0];
         this.selectedLanguages = this.utilService.LangagesToArray(this.cv.langages);
       }
     });
 
-    this.cvService.getCvExperiences(this.idCv).subscribe(data => {
-      if (data.code === Constants.SUCCES_CODE){
-        this.experiences = <Array<Experience>>data.resultat;
-      }
-    });
+    this.loadExperiences();
 
     this.cvService.getCvFormations(this.idCv).subscribe(data => {
-      if (data.code === Constants.SUCCES_CODE){
+      if (data.code === SUCCES_CODE){
         this.formations = <Array<Formation>>data.resultat;
       }
     });
 
     this.cvService.getCvLangues(this.idCv).subscribe(data => {
-      if (data.code === Constants.SUCCES_CODE){
+      if (data.code === SUCCES_CODE){
         this.langues = <Array<Langue>>data.resultat;
       }
     });
 
     this.cvService.getReferenceCompetences().subscribe(data => {
       const res: any = data.resultat;
-      if (data.code === Constants.SUCCES_CODE){
+      if (data.code === SUCCES_CODE){
         this.languages = this.utilService.CompetencesToArray(res.languages);
         this.frameworks = this.utilService.CompetencesToArray(res.frameworks);
         this.sgbd = this.utilService.CompetencesToArray(res.sgbd);
@@ -104,8 +101,12 @@ export class CvTechComponent implements OnInit {
     this.selectedDevops = ["Kubernetes", "Docker"];
   }
 
-  newExperience($event: Experience): void {
-    this.experiences.push($event);
+  private loadExperiences(): void {
+    this.cvService.getCvExperiences(this.idCv).subscribe(data => {
+      if (data.code === SUCCES_CODE){
+        this.experiences = <Array<Experience>>data.resultat;
+      }
+    });
   }
 
   newCompetence($event: CompetenceFonctionnel): void {
@@ -120,8 +121,32 @@ export class CvTechComponent implements OnInit {
     this.langues.push($event);
   }
 
-  newExperiencePro($event: Experience): void {
-    this.experiences.push($event);
+  experienceAction($event: ActionManager<Experience>): void {
+    
+    if ($event.action === CREATE_ACTION){
+        this.cvService.createExperience(this.idCv, $event.element).subscribe(data => {
+          if (data.code === SUCCES_CODE){
+            this.loadExperiences();
+          }
+        });
+    }
+    if ($event.action === UPDATE_ACTION){
+      // Mise à jour en base de données
+      this.cvService.updateExperience(this.idCv, $event.element).subscribe(data => {
+        if (data.code === SUCCES_CODE){
+          // Chargement des expériences
+          this.loadExperiences();
+        }
+      });
+    }
+    if ($event.action === DELETE_ACTION){
+      this.cvService.deleteExperience(this.idCv, $event.element).subscribe(data => {
+        if (data.code === SUCCES_CODE){
+          //Chargement des expériences
+          this.loadExperiences();
+        }
+      });
+    }
   }
     
 }

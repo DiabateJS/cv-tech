@@ -21,7 +21,7 @@
                 <label>Description</label>
                 <input type="text" value="{{ experience.description }}" />
             </div>
-            <span>SUPPRIMER</span>
+            <span (click)="delete(experience.id)">SUPPRIMER</span>
         </div>
     </div>
 </div>

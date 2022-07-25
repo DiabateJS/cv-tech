@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CREATE_ACTION, UPDATE_ACTION, DELETE_ACTION } from '../models/constants';
+import { ActionManager } from '../models/action-manager';
 import { Experience } from '../models/experience';
 
 @Component({
@@ -8,7 +10,7 @@ import { Experience } from '../models/experience';
 })
 export class ExperiencesProComponent implements OnInit {
   @Input() experiences: Array<Experience> = [];
-  @Output() experiencePro: EventEmitter<Experience> = new EventEmitter<Experience>();
+  @Output() experiencePro: EventEmitter<ActionManager<Experience>> = new EventEmitter<ActionManager<Experience>>();
   selectedExperience: Experience = {} as Experience;
   showEditZone: boolean = false;
   showNewExpProForm: boolean = false;
@@ -28,6 +30,8 @@ export class ExperiencesProComponent implements OnInit {
   }
 
   save(){
+    const action = {action: UPDATE_ACTION, element: this.selectedExperience} as ActionManager<Experience>;
+    this.experiencePro.emit(action);
     this.showEditZone = false;
   }
 
@@ -36,14 +40,20 @@ export class ExperiencesProComponent implements OnInit {
   }
 
   saveExpPro(): void {
-    let maxId = 0;
-    this.experiences.forEach(e => {
-          maxId = parseInt(e.id) > maxId ? parseInt(e.id) : maxId;
-    });
-    const experience = {id: ''+(maxId+1), client: this.client, description: this.description, ville: this.ville, 
+    const experience = {id: "", client: this.client, description: this.description, taches: "", ville: this.ville, 
                         projet: "", poste: "", debut: "", fin: "", envtech: ""} as Experience;
-    this.experiencePro.emit(experience);
+    const action = {action:CREATE_ACTION, element: experience} as ActionManager<Experience>;                    
+    this.experiencePro.emit(action);
+    this.client = "";
+    this.description = "";
+    this.ville = "";
     this.showNewExpProForm = false;
+  }
+
+  delete(id: string): void {
+    const expToDelete = this.experiences.filter(exp => exp.id === id)[0];
+    const action = {action:DELETE_ACTION, element: expToDelete} as ActionManager<Experience>;
+    this.experiencePro.emit(action);
   }
 
 }

@@ -28,7 +28,7 @@
                 <input type="text" value="{{ experience.ville }}" />
             </div>
             <button (click)="edit(experience.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDITER</button>
-            <span>SUPPRIMER</span>
+            <span (click)="delete(experience.id)">SUPPRIMER</span>
         </div>
         <div class="pro-detail-edit" *ngIf="showEditZone">
             <div class="edit-btn-container">
@@ -42,35 +42,35 @@
                 <div class="edit-info-row">
                     <div class="titre-projet-block">
                         <label>Titre du projet</label>
-                        <input type="text" value="{{ selectedExperience.projet }}"/>
+                        <input type="text" [(ngModel)]="selectedExperience.projet"/>
                     </div>
                     <div class="poste-block">
                         <label>Poste occupé</label>
-                        <input type="text" value="{{ selectedExperience.poste }}"/>
+                        <input type="text" [(ngModel)]="selectedExperience.poste"/>
                     </div>
                     <div class="debut-block">
                         <label>Début</label>
-                        <input type="text" value="{{ selectedExperience.debut }}"/>
+                        <input type="text" [(ngModel)]="selectedExperience.debut"/>
                     </div>
                     <div class="fin-block">
                         <label>Fin</label>
-                        <input type="text" value="{{ selectedExperience.fin }}"/>
+                        <input type="text" [(ngModel)]="selectedExperience.fin"/>
                     </div>
                 </div>
                 <div class="edit-description-row">
                     <label>Description du projet</label>
-                    <input type="text" value="{{ selectedExperience.description }}" />
+                    <input type="text" [(ngModel)]="selectedExperience.description" />
                 </div>
             </div>
             <div class="edit-taches-block">
                 <div class="taches-block-title">Tâches affectées</div>
                 <div class="text-edit-container">
-                    <textarea></textarea>
+                    <textarea [(ngModel)]="selectedExperience.taches"></textarea>
                 </div>
             </div>
             <div class="edit-env-tech-row">
                 <label>Environnement technique</label>
-                <input type="text" value="{{ selectedExperience.envtech }}"/>
+                <input type="text" [(ngModel)]="selectedExperience.envtech"/>
             </div>
         </div>
     </div>

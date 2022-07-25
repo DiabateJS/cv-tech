@@ -1,4 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { ActionManager } from '../models/action-manager';
+import { CREATE_ACTION, DELETE_ACTION } from '../models/constants';
 import { Experience } from '../models/experience';
 
 @Component({
@@ -8,7 +10,7 @@ import { Experience } from '../models/experience';
 })
 export class ExperiencesComponent implements OnInit {
   @Input() experiences: Array<Experience> = [];
-  @Output() exps: EventEmitter<Experience> = new EventEmitter<Experience>();
+  @Output() exps: EventEmitter<ActionManager<Experience>> = new EventEmitter<ActionManager<Experience>>();
   client: string = "";
   description: string = "";
   showNewExperienceForm: boolean = false;
@@ -24,10 +26,17 @@ export class ExperiencesComponent implements OnInit {
 
   saveExperience(): void {
     const experience = {id:"", client: this.client, description: this.description} as Experience;
-    this.exps.emit(experience);
+    const action = {action: CREATE_ACTION, element: experience} as ActionManager<Experience>;
+    this.exps.emit(action);
     this.client = "";
     this.description = "";
     this.showNewExperienceForm = false;
+  }
+
+  delete(id: string): void {
+    const expToDelete = this.experiences.filter(exp => exp.id === id)[0];
+    const action = {action:DELETE_ACTION, element: expToDelete} as ActionManager<Experience>;
+    this.exps.emit(action);
   }
 
 }
