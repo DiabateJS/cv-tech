@@ -82,10 +82,7 @@ export class CvTechComponent implements OnInit {
       }
     });
 
-    this.cvService.getCvExperiencesFonctionnelles(this.idCv).subscribe(data => {
-      const res: any = data.resultat;
-      this.fonctionnels = res;
-    });
+    this.loadCompetencesFonctionnelles();
 
     this.selectedFrameworks = ["ANGULAR", "ANGULARJS", "JPA", "HIBERNATE", "J2EE", "NODE.JS",
                         "REACT.JS", "REST", "SPRING", "SPRING BOOT", "TWITTER BOOTSTRAP"];
@@ -109,8 +106,34 @@ export class CvTechComponent implements OnInit {
     });
   }
 
-  newCompetence($event: CompetenceFonctionnel): void {
-    this.fonctionnels.push($event);
+  private loadCompetencesFonctionnelles(): void {
+    this.cvService.getCvExperiencesFonctionnelles(this.idCv).subscribe(data => {
+      const res: any = data.resultat;
+      this.fonctionnels = res;
+    });
+  }
+
+  competenceFonctAction($event: ActionManager<CompetenceFonctionnel>): void {
+    if ($event.action === CREATE_ACTION){
+      this.cvService.createExperienceFonctionnelle(this.idCv, $event.element).subscribe(data => {
+        if (data.code === SUCCES_CODE){
+          this.loadCompetencesFonctionnelles();
+        }
+      });
+    }
+    if ($event.action === UPDATE_ACTION){
+      this.cvService.updateExperienceFonctionnelle(this.idCv, $event.element).subscribe(data => {
+        console.log(data);
+        if (data.code === SUCCES_CODE){
+          this.loadCompetencesFonctionnelles();
+        }
+      });
+    }
+    if ($event.action === DELETE_ACTION){
+      this.cvService.deleteExperienceFonctionnelle(this.idCv, $event.element).subscribe(data => {
+        this.loadCompetencesFonctionnelles();
+      });
+    }
   }
 
   newFormation($event: Formation): void {

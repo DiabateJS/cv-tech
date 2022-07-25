@@ -12,6 +12,11 @@
             <input type="text" class="fonct-description" placeholder="Description" [(ngModel)]="description">
             <button (click)="saveCompetence()">Enregistrer</button>
         </div>
+        <div class="form-new-competence-fonctionnel" *ngIf="canShowCompetenceFonctUpdateForm">
+            <input type="text" placeholder="Titre" [(ngModel)]="selectedCompetenceFonctionnelle.libelle">
+            <input type="text" class="fonct-description" placeholder="Description" [(ngModel)]="selectedCompetenceFonctionnelle.description">
+            <button (click)="updateCompetence()">Mis à Jour</button>
+        </div>
         <div class="fonctionnel-details-container">
             <div class="fonctionnel-detail-row" *ngFor="let fonctionnel of fonctionnels">
                 <div class="titre-field-group">
@@ -22,7 +27,8 @@
                     <label>Description</label>
                     <input type="text" value="{{ fonctionnel.description }}" />
                 </div>
-                <span>SUPPRIMER</span>
+                <span class="span-edit" (click)="edit(fonctionnel.id)">EDITER</span>
+                <span (click)="delete(fonctionnel.id)">SUPPRIMER</span>
             </div>
         </div>
     </div>

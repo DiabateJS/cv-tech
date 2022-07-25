@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Competence } from './models/competence';
+import { CompetenceFonctionnel } from './models/competence-fonctionnel';
 import { CvResponse } from './models/cvresponse';
 import { Experience } from './models/experience';
 import { ReferenceCompetences } from './models/reference-competences';
@@ -51,6 +52,22 @@ export class CvService {
     const url = this.url_base + "url=cvs/"+idCv+"/competences_fonctionnelles/";
     return this.http.get<Response>(url);
   }
+
+  createExperienceFonctionnelle(idCv: string, compFonctionnelle: CompetenceFonctionnel): Observable<Response> {
+    const url = this.url_base + "url=cvs/"+idCv+"/competences_fonctionnelles/";
+    return this.http.post<Response>(url, compFonctionnelle);
+  }
+
+  updateExperienceFonctionnelle(idCv: string, compFonctionnelle: CompetenceFonctionnel): Observable<Response> {
+    const url = this.url_base + "url=cvs/"+idCv+"/competences_fonctionnelles/"+compFonctionnelle.id;
+    return this.http.put<Response>(url, compFonctionnelle);
+  }
+
+  deleteExperienceFonctionnelle(idCv: string, compFonctionnelle: CompetenceFonctionnel): Observable<Response> {
+    const url = this.url_base + "url=cvs/"+idCv+"/competences_fonctionnelles/"+compFonctionnelle.id;
+    return this.http.delete<Response>(url);
+  }
+
 
   getCvFormations(idCv: string): Observable<Response> {
     const url = this.url_base + "url=cvs/"+idCv+"/formations/";
