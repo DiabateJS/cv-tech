@@ -7,6 +7,7 @@ import { CompetenceFonctionnel } from './models/competence-fonctionnel';
 import { CvResponse } from './models/cvresponse';
 import { Experience } from './models/experience';
 import { Formation } from './models/formation';
+import { Langue } from './models/langue';
 import { ReferenceCompetences } from './models/reference-competences';
 import { Response } from './models/response';
 
@@ -93,6 +94,21 @@ export class CvService {
   getCvLangues(idCv: string): Observable<Response> {
     const url = this.url_base + "url=cvs/"+idCv+"/langues/";
     return this.http.get<Response>(url);
+  }
+
+  createLangue(idCv: string, langue: Langue): Observable<Response> {
+    const url = this.url_base + "url=cvs/"+idCv+"/langues/";
+    return this.http.post<Response>(url, langue);
+  }
+
+  deleteLangue(idCv: string, langue: Langue): Observable<Response> {
+    const url = this.url_base + "url=cvs/"+idCv+"/langues/"+langue.id;
+    return this.http.delete<Response>(url);
+  }
+
+  updateLangue(idCv: string, langue: Langue): Observable<Response> {
+    const url = this.url_base + "url=cvs/"+idCv+"/langues/"+langue.id;
+    return this.http.put<Response>(url, langue);
   }
 
   getReferenceCompetences(): Observable<Response> {

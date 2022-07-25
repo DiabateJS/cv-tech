@@ -16,6 +16,15 @@
             </select>
             <button (click)="saveLangue()">Enregistrer</button>
         </div>
+        <div class="form-new-langue" *ngIf="canShowFormUpdateLangue">
+            <input type="text" placeholder="Langue" [(ngModel)]="selectedLangue.libelle">
+            <select [(ngModel)]="selectedLangue.niveau">
+                <option value="debutant">Débutant</option>
+                <option value="professionnel">Professionnel</option>
+                <option value="courant">Courant</option>
+            </select>
+            <button (click)="updateLangue()">Enregistrer</button>
+        </div>
         <div class="langue-row" *ngFor="let langue of langues">
             <div class="langue-field-group">
                 <label>Langue</label>
@@ -35,7 +44,8 @@
                     <label form="courant">Courant</label>
                 </div>
             </div>
-            <span>SUPPRIMER</span>
+            <span (click)="edit(langue.id)" class="edit-span">EDITER</span>
+            <span (click)="delete(langue.id)">SUPPRIMER</span>
         </div>
     </div>
 </div>

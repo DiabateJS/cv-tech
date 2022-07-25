@@ -59,11 +59,7 @@ export class CvTechComponent implements OnInit {
 
     this.loadFormations();
 
-    this.cvService.getCvLangues(this.idCv).subscribe(data => {
-      if (data.code === SUCCES_CODE){
-        this.langues = <Array<Langue>>data.resultat;
-      }
-    });
+    this.loadLangues();
 
     this.cvService.getReferenceCompetences().subscribe(data => {
       const res: any = data.resultat;
@@ -117,6 +113,14 @@ export class CvTechComponent implements OnInit {
     });
   }
 
+  private loadLangues(): void {
+    this.cvService.getCvLangues(this.idCv).subscribe(data => {
+      if (data.code === SUCCES_CODE){
+        this.langues = <Array<Langue>>data.resultat;
+      }
+    });
+  }
+
   competenceFonctAction($event: ActionManager<CompetenceFonctionnel>): void {
     if ($event.action === CREATE_ACTION){
       this.cvService.createExperienceFonctionnelle(this.idCv, $event.element).subscribe(data => {
@@ -127,7 +131,6 @@ export class CvTechComponent implements OnInit {
     }
     if ($event.action === UPDATE_ACTION){
       this.cvService.updateExperienceFonctionnelle(this.idCv, $event.element).subscribe(data => {
-        console.log(data);
         if (data.code === SUCCES_CODE){
           this.loadCompetencesFonctionnelles();
         }
@@ -164,8 +167,28 @@ export class CvTechComponent implements OnInit {
     }
   }
 
-  newLangue($event: Langue): void {
-    this.langues.push($event);
+  langueAction($event: ActionManager<Langue>): void {
+    if ($event.action === CREATE_ACTION){
+      this.cvService.createLangue(this.idCv, $event.element).subscribe(data => {
+        if (data.code === SUCCES_CODE){
+          this.loadLangues();
+        }
+      });
+    }
+    if ($event.action === DELETE_ACTION){
+      this.cvService.deleteLangue(this.idCv, $event.element).subscribe(data => {
+        if (data.code === SUCCES_CODE){
+          this.loadLangues();
+        }
+      });
+    }
+    if ($event.action === UPDATE_ACTION){
+      this.cvService.updateLangue(this.idCv, $event.element).subscribe(data => {
+        if (data.code === SUCCES_CODE){
+          this.loadLangues();
+        }
+      });
+    }
   }
 
   experienceAction($event: ActionManager<Experience>): void {
