@@ -3,25 +3,26 @@
         <div class="box-title-group">
             <span><i style="color: orange;" class="fa fa-info-circle" aria-hidden="true"></i></span>
             <p class="titre">Informations générales</p>
+            <span (click)="saveCv()" class="btn-save">Enregistrer</span>
         </div>
         <div class="field-row">
             <div class="field-group">
                 <label>Titre du dossier de compétences</label>
-                <input type="text" value="{{ info.titre }}" />
+                <input type="text" [(ngModel)]="info.titre" />
             </div>
             <div class="field-group">
                 <label>Poste occupé</label>
-                <input type="text" value="{{ info.poste }}" />
+                <input type="text" [(ngModel)]="info.poste" />
             </div>
         </div>
         <div class="field-row">
             <div class="field-group">
                 <label>Nombre d'années d'expérience</label>
-                <input type="text" value="{{ info.annee }}" />
+                <input type="text" [(ngModel)]="info.annee" />
             </div>
             <div class="field-group">
                 <label>Disponibilité</label>
-                <input type="text" value="{{ info.dispo }}" />
+                <input type="text" [(ngModel)]="info.dispo" />
             </div>
         </div>
     </div>
@@ -30,8 +31,7 @@
             <span><i style="color: blue;" class="fa fa-user-circle" aria-hidden="true"></i></span>
             <p class="titre">Introduction</p>
         </div>
-        <textarea>
-            {{ info.intro }}
+        <textarea [(ngModel)]="info.intro">
         </textarea>
     </div>
 </div>

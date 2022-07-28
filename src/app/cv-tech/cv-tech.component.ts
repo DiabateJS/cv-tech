@@ -48,12 +48,7 @@ export class CvTechComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cvService.getCvById(this.idCv).subscribe(res => {
-      if (res.code === SUCCES_CODE){
-        this.cv = <Cv>res.resultat.data[0];
-        this.selectedLanguages = this.utilService.LangagesToArray(this.cv.langages);
-      }
-    });
+    this.loadCv();
 
     this.loadExperiences();
 
@@ -94,6 +89,15 @@ export class CvTechComponent implements OnInit {
     this.cvService.getCvExperiences(this.idCv).subscribe(data => {
       if (data.code === SUCCES_CODE){
         this.experiences = <Array<Experience>>data.resultat;
+      }
+    });
+  }
+
+  private loadCv(): void {
+    this.cvService.getCvById(this.idCv).subscribe(res => {
+      if (res.code === SUCCES_CODE){
+        this.cv = <Cv>res.resultat.data[0];
+        this.selectedLanguages = this.utilService.LangagesToArray(this.cv.langages);
       }
     });
   }
@@ -214,6 +218,16 @@ export class CvTechComponent implements OnInit {
         if (data.code === SUCCES_CODE){
           //Chargement des expériences
           this.loadExperiences();
+        }
+      });
+    }
+  }
+
+  cvAction($event: ActionManager<Cv>): void {
+    if ($event.action === UPDATE_ACTION){
+      this.cvService.updateCv(this.idCv, $event.element).subscribe(data => {
+        if (data.code === SUCCES_CODE){
+          this.loadCv();
         }
       });
     }

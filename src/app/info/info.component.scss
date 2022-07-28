@@ -3,6 +3,17 @@
         .box-title-group {
             display: flex;
             flex-direction: row;
+            .btn-save {
+                background-color: blue;
+                height: 25px;
+                width: 90px;
+                padding-top: 5px;
+                padding-left: 10px;
+                color: white;
+                border-radius: 10px;
+                margin-left: 460px;
+                margin-top: 10px;
+            }
         }
 
         textarea {

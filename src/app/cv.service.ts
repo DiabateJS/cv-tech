@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Competence } from './models/competence';
 import { CompetenceFonctionnel } from './models/competence-fonctionnel';
+import { Cv } from './models/cv';
 import { CvResponse } from './models/cvresponse';
 import { Experience } from './models/experience';
 import { Formation } from './models/formation';
@@ -28,6 +29,11 @@ export class CvService {
   getCvById(id: string): Observable<CvResponse> {
     const url = this.url_base+"url=cvs/"+id;
     return this.http.get<CvResponse>(url);
+  }
+
+  updateCv(idCv: string, cv: Cv): Observable<Response> {
+    const url = this.url_base+"url=cvs/"+idCv;
+    return this.http.put<Response>(url, cv);
   }
 
   getCvExperiences(idCv: string): Observable<Response> {

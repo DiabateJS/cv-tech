@@ -7,7 +7,7 @@
         <button>TELECHARGER PDF</button>
         <button>Visualiser le rendu</button>
     </div>
-    <app-info [info]="cv"></app-info>
+    <app-info [info]="cv" (cv)="cvAction($event)"></app-info>
     <app-experiences [experiences]="experiences" (exps)="experienceAction($event)"></app-experiences>
     <app-competences-techniques [languages]="languages"
                                 [selectedLanguages]="selectedLanguages"
